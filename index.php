@@ -9,5 +9,12 @@
 <body>
     <h1>This is a Test to see</h1>
     
+    <a href="Settings/db_class.php">DB CHECK</a>
 </body>
 </html>
+
+
+<?php
+
+
+?>

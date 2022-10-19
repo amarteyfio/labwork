@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Welcome! Register Below</h1>
-    <form action = "registerprocess.php" method="POST" name = "regform" onclick="ValidateEmail();ValidatePhone();">
+    <form action = "registerprocess.php" method="POST" name = "regform">
     <input type="text" name = "name" placeholder="Enter your Name" required>
     <br>
     <br>

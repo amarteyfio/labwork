@@ -14,4 +14,5 @@ define('DB_USERNAME', $cleardb_url["bbb7d7a4ab2a24"]);
 define('DB_PASSWORD', $cleardb_url["690a2818"]);
 define('DB_NAME', substr($cleardb_url["path"],1));
 
+echo DB_NAME;
 ?>

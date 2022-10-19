@@ -17,6 +17,8 @@ if (isset($_POST['register'])){
     $country = $_POST['country'];
     $city = $_POST['city'];
     $phone = $_POST['tele'];
+
+    $fpass = password_hash($pass, PASSWORD_DEFAULT);
     
     
 }
@@ -24,7 +26,7 @@ else{
     echo "something went wrong";
 }
 
-addcus_ctr($name,$email,$pass,$country,$city,$phone);
+addcus_ctr($name,$email,$fpass,$country,$city,$phone);
 
 header("Location: ../index.php");
 

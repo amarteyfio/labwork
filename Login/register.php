@@ -30,7 +30,7 @@
     <input type="text"name ="tele" placeholder="Enter Phone Number">
     <br>
     <br>
-    <input type="button" name= "register" value="Register">
+    <input type="Submit" name= "register" value="Register">
     </form>
     
 </body>

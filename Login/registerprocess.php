@@ -28,7 +28,7 @@ else{
 
 addcus_ctr($name,$email,$fpass,$country,$city,$phone);
 
-header("Location: ../index.php");
+header("Location: login.php");
 
 
 ?>

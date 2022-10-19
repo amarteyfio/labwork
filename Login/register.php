@@ -13,7 +13,7 @@
     <input type="text" name = "name" placeholder="Enter your Name" required>
     <br>
     <br>
-    <input type="text" name = "email" placeholder="Enter your Email Address" required>
+    <input type="email" name = "email" placeholder="Enter your Email Address" required placeholder="user@example.com">
     <br>
     <br>
     <input type="password" name = "password" placeholder="Enter Password" required>
@@ -28,7 +28,7 @@
     <input type="text" name="city" placeholder="Enter your City" required>
     <br>
     <br>
-    <input type="text"name ="tele" placeholder="Enter Phone Number" required>
+    <input type="tel"name ="tele" placeholder="Enter Phone Number" maxlength = "10" minlength="10" required pattern="[0-9]{10}" placeholder="XXX-XXX-XXXX">
     <br>
     <br>
     <input type="Submit" name= "register" value="Register">

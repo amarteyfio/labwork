@@ -9,13 +9,13 @@
 <body>
     <h1>Login Form</h1>
     <form method="POST" action="#">
-        <input type="text" placeholder = "Enter your Email">
+        <input type="text" placeholder = "Enter your Email" name="email">
         <br>
         <br>
-        <input type="password" placeholder="Enter your Password">
+        <input type="password" placeholder="Enter your Password" name="pass">
         <br>
         <br>
-        <input type="button" value="Login">
+        <input type="button" value="Login" name="login" >
     </form>
 </body>
 </html>

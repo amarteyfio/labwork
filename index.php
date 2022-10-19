@@ -7,9 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>This is a Test to see</h1>
+    <h1>Menu</h1>
     
-    <a href="Settings/db_class.php">DB CHECK</a>
+    <a href="Login/login.php">LOGIN</a>
+    <br>
+    <br>
+    <a href="Login/register.php">REGISTER</a>
 </body>
 </html>
 

@@ -28,5 +28,5 @@ addcus_ctr($name,$email,$pass,$country,$city,$phone);
 
 header("Location: ../index.php");
 
-//header("Location: ../view/done.php");
+
 ?>

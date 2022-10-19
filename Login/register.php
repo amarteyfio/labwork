@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../JS/regexpress.js"></script>
     <script src="../JS/regformeval.js"></script>
     <title>Register</title>
 </head>
 <body>
     <h1>Welcome! Register Below</h1>
-    <form action = "registerprocess.php" method="POST" name = "regform" onclick="ValidateEmail()" onclick="ValidatePhone()">
+    <form action = "registerprocess.php" method="POST" name = "regform" onclick="ValidateEmail();ValidatePhone();">
     <input type="text" name = "name" placeholder="Enter your Name" required>
     <br>
     <br>

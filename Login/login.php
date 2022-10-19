@@ -9,7 +9,7 @@
 <body>
     <h1>Login Form</h1>
     <form method="POST" action="#">
-        <input type="text" placeholder = "Enter your email">
+        <input type="text" placeholder = "Enter your Email">
         <br>
         <br>
         <input type="password" placeholder="Enter your Password">

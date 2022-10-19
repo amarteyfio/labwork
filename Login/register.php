@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Welcome! Register Below</h1>
-    <form action = "registerprocess.php" method="POST">
+    <form action = "login.php" method="POST">
     <input type="text" name = "name" placeholder="Enter your Name">
     <br>
     <br>

@@ -9,9 +9,9 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 
-define('DB_SERVER', $cleardb_url["us-cdbr-east-06.cleardb.net"]);
-define('DB_USERNAME', $cleardb_url["bbb7d7a4ab2a24"]);
-define('DB_PASSWORD', $cleardb_url["690a2818"]);
+define('DB_SERVER', $cleardb_url["host"]);
+define('DB_USERNAME', $cleardb_url["user"]);
+define('DB_PASSWORD', $cleardb_url["pass"]);
 define('DB_NAME', substr($cleardb_url["path"],1));
 
 echo DB_NAME;

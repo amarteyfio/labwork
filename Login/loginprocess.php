@@ -27,7 +27,13 @@ if(isset($_POST['login'])){
 
     //retrieve account
     $user = email_sel_ctr($email); 
-       
+    
+    if(empty($user)){
+        $message = 'Invalid Email';
+        echo "<SCRIPT> alert('$message')
+        window.location.replace('login.php');
+        </SCRIPT>";
+    }
     
     $password = $user['customer_pass'];
 
@@ -41,7 +47,11 @@ if(isset($_POST['login'])){
         header("Location: ../View/index.php");
     }
     else{
-        header("Location: login.php");
+        $message = 'Invalid Password';
+        echo "<SCRIPT> alert('$message')
+        window.location.replace('login.php');
+        </SCRIPT>";
+        //header("Location: login.php");
     }
 
 }

@@ -22,10 +22,12 @@ if(isset($_POST['login'])){
     //assign vars
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    //var_dump($email);
+    
 
     //retrieve account
-    $user = email_sel_ctr($email);    
+    $user = email_sel_ctr($email); 
+    var_dump($user);   
+    /*
     $password = $user['customer_pass'];
 
     if(password_verify($pass,$password) == true){
@@ -40,7 +42,7 @@ if(isset($_POST['login'])){
     else{
         header("Location: login.php");
     }
-
+*/
 }
 
 

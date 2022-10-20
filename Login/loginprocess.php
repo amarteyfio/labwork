@@ -3,28 +3,29 @@
  * @author Amarteyfio
  * 
  */
+
+
 //start session
 session_start();
-
 //check if user is logged in already
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../View/index.php");
     exit;
 }
 
+//include controllers
 require("../Controller/customer_controller.php");
 
 
+//if button is clicked
 if(isset($_POST['login'])){
     //assign vars
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
+    //retrieve record
     $user = email_sel_ctr($email);
-    if(empty($user)){
-        echo "Invalid Details";
-    }
-    else{    
+
     $password = $user['customer_password'];
 
     if(password_verify($pass,$password) == true){
@@ -41,5 +42,5 @@ if(isset($_POST['login'])){
 
 }
 
-}
+
 ?>

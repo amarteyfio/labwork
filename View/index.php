@@ -24,7 +24,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
     <a href="../Login/logout.php">LOGOUT</a><p>(logged in : will add more menu later)</p>
     <br>
-    <br>
     <a href="../Login/register.php">REGISTER</a>
 </body>
 </html>

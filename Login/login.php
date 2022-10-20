@@ -18,10 +18,10 @@ session_start();
 <body>
     <h1>Login Form</h1>
     <form method="POST" action="loginprocess.php">
-        <input type="text" placeholder = "Enter your Email" name="email">
+        <input type="email" placeholder = "Enter your Email" name="email" required>
         <br>
         <br>
-        <input type="password" placeholder="Enter your Password" name="pass">
+        <input type="password" placeholder="Enter your Password" name="pass" required>
         <br>
         <br>
         <input type="Submit" value="Login" name="login" >

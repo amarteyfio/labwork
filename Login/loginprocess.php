@@ -22,11 +22,11 @@ if(isset($_POST['login'])){
     //assign vars
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    
+    var_dump($pass);
 
     //retrieve account
-    $user = email_sel_ctr($email); 
-    var_dump($user);   
+    //$user = email_sel_ctr($email); 
+    //var_dump($user);   
     /*
     $password = $user['customer_pass'];
 

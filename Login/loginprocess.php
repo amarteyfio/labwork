@@ -15,7 +15,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 require("../Controller/customer_controller.php");
 
 
- if(isset($_POST['login'])){
+if(isset($_POST['login'])){
     //assign vars
     $email = $_POST['email'];
     $pass = $_POST['pass'];

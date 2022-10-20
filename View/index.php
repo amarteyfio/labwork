@@ -22,7 +22,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <h1>Menu</h1>
     <p>Welcome <?php echo $_SESSION['name'];?></p>
     
-    <a href="../Login/logout.php">LOGOUT(Not logged in will add more menu later)</a>
+    <a href="../Login/logout.php">LOGOUT</a><p>(logged in : will add more menu later)</p>
     <br>
     <br>
     <a href="../Login/register.php">REGISTER</a>

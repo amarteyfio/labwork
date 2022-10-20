@@ -20,6 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <h1>Menu</h1>
+    <p>Welcome <?php echo $_SESSION['name'];?></p>
     
     <a href="../Login/logout.php">LOGOUT(Not logged in will add more menu later)</a>
     <br>

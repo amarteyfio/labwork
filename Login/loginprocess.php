@@ -5,14 +5,14 @@
  */
 
 
-//start session
+/*/start session
 session_start();
 //check if user is logged in already
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../View/index.php");
     exit;
 }
-
+*/
 //include controllers
 require("../Controller/customer_controller.php");
 

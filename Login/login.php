@@ -1,3 +1,12 @@
+<?php
+//Session Start
+ob_start();
+session_start();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +17,7 @@
 </head>
 <body>
     <h1>Login Form</h1>
-    <form method="POST" action="#">
+    <form method="POST" action="loginprocess.php">
         <input type="text" placeholder = "Enter your Email" name="email">
         <br>
         <br>
@@ -20,11 +29,3 @@
 </body>
 </html>
 
-<?php
-
-/*if(password_verify($password, $hashed_password)) {
-    // If the password inputs matched the hashed password in the database
-    // Do something, you know... log them in.
-}
-*/ 
-?>

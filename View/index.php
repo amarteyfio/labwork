@@ -1,3 +1,15 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: ../Login/login.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +24,8 @@
     <a href="../Login/logout.php">LOGOUT(Not logged in will add more menu later)</a>
     <br>
     <br>
-    <a href="Login/register.php">REGISTER</a>
+    <a href="../Login/register.php">REGISTER</a>
 </body>
 </html>
 
 
-<?php
-
-
-?>

@@ -24,11 +24,9 @@ if(isset($_POST['login'])){
     $pass = $_POST['pass'];
     var_dump($pass);
 
-    $t = selcus_ctr(84);
-    var_dump($t);
     //retrieve account
-    //$user = email_sel_ctr($email); 
-    //var_dump($user);   
+    $user = email_sel_ctr($email); 
+    var_dump($user);   
     /*
     $password = $user['customer_pass'];
 

@@ -25,11 +25,7 @@ if(isset($_POST['login'])){
     //var_dump($email);
 
     //retrieve account
-    $user = email_sel_ctr($email);
-    if(empty($user)){
-        echo "Invalid Details";
-    }
-    else{    
+    $user = email_sel_ctr($email);    
     $password = $user['customer_pass'];
 
     if(password_verify($pass,$password) == true){
@@ -38,6 +34,7 @@ if(isset($_POST['login'])){
         $_SESSION["id"] = $user['customer_id'];
         $_SESSION["name"] = $user['customer_name'];
         //redirect to main page
+
         header("Location: ../View/index.php");
     }
     else{
@@ -46,5 +43,5 @@ if(isset($_POST['login'])){
 
 }
 
-}
+
 ?>

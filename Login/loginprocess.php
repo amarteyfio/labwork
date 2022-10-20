@@ -22,7 +22,7 @@ if(isset($_POST['login'])){
     //assign vars
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    var_dump($email);
+    //var_dump($email);
 
     //retrieve account
     $user = email_sel_ctr($email);
@@ -30,7 +30,7 @@ if(isset($_POST['login'])){
         echo "Invalid Details";
     }
     else{    
-    $password = $user['customer_password'];
+    $password = $user['customer_pass'];
 
     if(password_verify($pass,$password) == true){
         session_start();

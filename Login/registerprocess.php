@@ -4,31 +4,57 @@
  * 
  */
 
-
+//Include controller
 require("../Controller/customer_controller.php");
 
+//check if button is clicked
 if (isset($_POST['register'])){
 
     //allocate variables
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
-    $passconf = $_POST['passwordconf'];
-    $country = $_POST['country'];
-    $city = $_POST['city'];
-    $phone = $_POST['tele'];
+    $name = $_POST['name'];//name
+    $email = $_POST['email'];//email
+    $pass = $_POST['password'];//password
+    $passconf = $_POST['passwordconf'];//to confirm password
+    $country = $_POST['country'];//country
+    $city = $_POST['city'];//city
+    $phone = $_POST['tele'];//phone number
 
-    $fpass = password_hash($pass, PASSWORD_DEFAULT);
-    
-    
+/**Check if 2 passwords match */
+if($pass != $passconf){
+    $message = 'Passwords do not match';
+        echo "<SCRIPT> alert('$message')
+        window.location.replace('register.php');
+        </SCRIPT>";
+}
+
+//encrypt password before 
+$fpass = password_hash($pass, PASSWORD_DEFAULT);
+
 }
 else{
     echo "something went wrong";
 }
 
-addcus_ctr($name,$email,$fpass,$country,$city,$phone);
 
-header("Location: login.php");
+/**Ensure Email does not exist in database before inserting */
+$user = email_sel_ctr($email); 
+    
+if(empty($user)){
+    addcus_ctr($name,$email,$fpass,$country,$city,$phone);
+
+    header("Location: login.php");
+}
+else
+{
+    $message = 'An account with this image already exists';
+        echo "<SCRIPT> alert('$message')
+        window.location.replace('register.php');
+        </SCRIPT>";
+
+}
+
+
+
 
 
 ?>

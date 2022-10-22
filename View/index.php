@@ -21,10 +21,39 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
     <h1>Menu</h1>
     <p>Welcome <?php echo $_SESSION['name'];?></p>
+
+    <div>
+        <?php
+        /**Direct users to appropriate menu based on user roles */
+        //Menu links
+        $logout = "../Login/logout.php";//logout
+        $register = "../Login/register.php";//register
+        $brand = "../Admin/Brand.php";//brand
+
+        if($_SESSION['role'] = 1){
+            echo "
+            <a href='$logout'>LOGOUT</a>
+            <br>
+            <a href='$register'>REGISTER</a>
+            <br>
+            <br>
+            <a href = '$brand'>BRAND</a>
+            ";
+        }
+        else
+        {
+           echo "
+           <a href='$logout'>LOGOUT</a><p>(logged in : will add more menu later)</p>
+           <br>
+           <a href='$register'>REGISTER</a>";
+            
+        }
+
+        ?>
+    </div>
+
     
-    <a href="../Login/logout.php">LOGOUT</a><p>(logged in : will add more menu later)</p>
-    <br>
-    <a href="../Login/register.php">REGISTER</a>
+    
 </body>
 </html>
 

@@ -1,3 +1,9 @@
+<?php
+//if user is already logged in redirect to log in page
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
 <body>
     <h1>Menu</h1>
     
-    <a href="Login/login.php">LOGIN</a><p>(Not logged in : will add more menu later)</p>
+    <a href="Login/login.php">LOGIN</a>
     <br>
     <br>
     <a href="Login/register.php">REGISTER</a>
@@ -17,7 +23,3 @@
 </html>
 
 
-<?php
-
-
-?>

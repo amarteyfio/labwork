@@ -39,7 +39,7 @@ function delcus($customer_id){
     return $new_del->delcus($customer_id);
 }
 
-//emailselect controller
+//email select controller
 function email_sel_ctr($email){
     $new_log = new customer_class();
     return $new_log->email_sel($email); 

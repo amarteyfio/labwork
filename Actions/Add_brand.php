@@ -12,9 +12,9 @@ if(isset($_POST['add'])){
 }
 
 //This section checks if brand already exists
- $brd = selbrand_ctr($name);
+ $brandc = selbrand_ctr($name);
  
- if(empty($brd)){
+ if(empty($brandc)){
     addbrand_ctr($name);
 
     $message = 'Brand Added!';

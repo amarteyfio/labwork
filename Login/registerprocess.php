@@ -46,7 +46,7 @@ if(empty($user)){
 }
 else
 {
-    $message = 'An account with this image already exists';
+    $message = 'An account with this email already exists';
         echo "<SCRIPT> alert('$message')
         window.location.replace('register.php');
         </SCRIPT>";

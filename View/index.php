@@ -30,23 +30,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         $register = "../Login/register.php";//register
         $brand = "../Admin/Brand.php";//brand
 
-        if($_SESSION['role'] = 1){
-            echo "
-            <a href='$logout'>LOGOUT</a>
-            <br>
-            <a href='$register'>REGISTER</a>
-            <br>
-            <br>
-            <a href = '$brand'>BRAND</a>
-            ";
+        if($_SESSION['role'] == 1)
+        {
+            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a>";
         }
         else
         {
-           echo "
-           <a href='$logout'>LOGOUT</a><p>(logged in : will add more menu later)</p>
-           <br>
-           <a href='$register'>REGISTER</a>";
-            
+           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a>";
         }
 
         ?>

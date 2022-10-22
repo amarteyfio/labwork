@@ -45,15 +45,9 @@ if(isset($_POST['login'])){
         $_SESSION["id"] = $user['customer_id']; //id
         $_SESSION["name"] = $user['customer_name'];//name
         $_SESSION["role"] = $user['user_role'];//role
-        //redirect to main page
+        
 
-        //check user role then redirect to appropriate page
-        if($user['user_role'] = 1){
-            header("Location: ../View/index.php");//redirect to admin page
-        }
-        else{
-            header("Location: ../View/index.php");//redicrect to home page
-        }
+         header("Location: ../View/index.php");//redicrect to home pape
 
         
     }

@@ -1,15 +1,3 @@
-<?php
-//if user is already logged in redirect to log in page
-// Initialize the session
-session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: ../Login/login.php");
-    exit;
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +10,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <body>
     <h1>Menu</h1>
     
-    <a href="Login/login.php">LOGIN</a>
-    <br>
-    <br>
-    <a href="Login/register.php">REGISTER</a>
+    <a href="Login/login.php">LOGIN</a> | <a href="Login/register.php">REGISTER</a>
 </body>
 </html>
 

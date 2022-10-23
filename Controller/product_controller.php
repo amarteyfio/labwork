@@ -23,4 +23,22 @@ function selbrand_ctr($name){
     return $brd->selbrand($name);
 }
 
+//select all brands controller
+function selallbrands_ctr($table){
+    $total = new product_class();
+    return $total->selallbrands($table);
+
+}
+
+//select brand using id controller
+function selectbrandid_ctr($id){
+    $brand = new product_class();
+    return $brand->selectbrandid($id);
+}
+
+//updatebrand controller
+function updatebrand_ctr($id,$name){
+    $newup = new product_class();
+    return $newup->updatebrand($id,$name);
+}
 ?>

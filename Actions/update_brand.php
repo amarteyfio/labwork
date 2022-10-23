@@ -21,6 +21,7 @@ require "../Controller/product_controller.php";
 $id = $_GET['id'];
 
 $record = selectbrandid_ctr($id);
+$brd = $record['brand_name'];
 
 
 if(isset($_POST['submit'])){
@@ -57,7 +58,7 @@ if(isset($_POST['submit'])){
 <body>
     <h1 style="font: 2rem sans-serif;">Update Brands</h1>
     <form method="POST">
-        <input name="name" type="text" value="<?php echo $record['brand_name']; ?>">
+        <input name="name" type="text" value="<?php echo $brd;?>">
         <br>
         <br>
         <input type = "Submit" name="submit" value="Update">

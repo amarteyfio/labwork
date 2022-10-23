@@ -22,7 +22,8 @@ include "../Controller/product_controller.php";
     <title>Brand Page</title>
 </head>
 <body>
-    <style>#div-2{float: left;} #div-1{float: left;}</style>
+    <style>#div-2{float: left; padding: 1rem;} #div-1{float: left; padding: 1rem;}</style>
+    <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
     <div id = "div-1">
     <h1>Brand Menu</h1>
     <p>Fill the Form Below to Add a Brand</p>
@@ -45,7 +46,7 @@ include "../Controller/product_controller.php";
         <tbody>
         <tr>
         <th>Name</th>
-        <th>Contact</th>
+        
         </tr>
         <?php 
         $recs = selallbrands_ctr("brands");

@@ -42,7 +42,7 @@ class product_class extends db_connection{
     //select brand using id
     function selectbrandid($id){
         $sql = "SELECT * FROM brands WHERE brand_id = $id";
-        $record = $this->db_fetch_all($sql);
+        $record = $this->db_fetch_one($sql);
         return $record;
 
     }

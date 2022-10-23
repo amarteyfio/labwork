@@ -21,8 +21,7 @@ require "../Controller/product_controller.php";
 $id = $_GET['id'];
 
 $record = selectbrandid_ctr($id);
-var_dump($record);
-var_dump($record['brand_name']);
+
 
 
 if(isset($_POST['submit'])){

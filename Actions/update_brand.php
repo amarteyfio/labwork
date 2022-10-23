@@ -22,6 +22,7 @@ $id = $_GET['id'];
 
 $record = selectbrandid_ctr($id);
 
+var_dump($record);
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
 

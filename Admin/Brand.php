@@ -22,7 +22,19 @@ include "../Controller/product_controller.php";
     <title>Brand Page</title>
 </head>
 <body>
-    <style>#div-2{float: left; padding: 1rem;} #div-1{float: left; padding: 1rem;}</style>>
+    <style>#div-2{float: left; padding: 1rem;} #div-1{float: left; padding: 1rem;}</style>
+    <div id = "div-1">
+    <h1>Brand Menu</h1>
+    <p>Fill the Form Below to Add a Brand</p>
+    <form method="POST" action = "../Actions/Add_brand.php">
+        <input type="text" name = "bname" placeholder="Enter a Brand Name" required>
+        <br>
+        <br>
+        <input type="submit" name = "add" value="Add Brand">
+    </form>
+    </div>
+    <br>
+    <br>
     <div id = "div-2">
     <table>
         <thead>
@@ -49,18 +61,7 @@ include "../Controller/product_controller.php";
         </tbody>
         </table>
     </div>
-    <br>
-    <br>
-    <div id = "div-1">
-    <h1>Brand Menu</h1>
-    <p>Fill the Form Below to Add a Brand</p>
-    <form method="POST" action = "../Actions/Add_brand.php">
-        <input type="text" name = "bname" placeholder="Enter a Brand Name" required>
-        <br>
-        <br>
-        <input type="submit" name = "add" value="Add Brand">
-    </form>
-    </div>
+
 
 </body>
 </html>

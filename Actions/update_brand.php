@@ -55,9 +55,9 @@ if(isset($_POST['submit'])){
     <title>Document</title>
 </head>
 <body>
-    <h1 style="padding: 1rem; font: 2rem sans-serif;">Update Brands</h1>
+    <h1 style="font: 2rem sans-serif;">Update Brands</h1>
     <form method="POST">
-        <input name="name"type="text" value="<?php echo $record['brand_name']; ?>">
+        <input name="name"type="text" value="<?php echo $record["brand_name"]; ?>">
         <br>
         <br>
         <input type = "Submit" name="submit" value="Update">

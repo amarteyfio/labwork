@@ -54,7 +54,7 @@ include "../Controller/product_controller.php";
         ?>
         <tr>
         <td><?php echo $rec['brand_name'];?></td>
-        <td><?php echo '<a href="Edit_brand.php?id='. $rec['brand_id'] .'" class="mr-3" title="Edit Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
+        <td><?php echo '<a href="../Actions/update_brand.php?id='. $rec['brand_id'] .'" class="mr-3" title="Edit Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
         
         </tr>
         <?php endforeach; ?>

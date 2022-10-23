@@ -30,13 +30,13 @@ if(isset($_POST['submit'])){
     if(empty($data)){
         updatebrand_ctr($id,$name);
 
-        header("Location: Brand.php");
+        header("Location: ../Admin/Brand.php");
 
     }
     else{
         $message = 'Brand Already Exists: returning to menu...';
         echo "<SCRIPT> alert('$message')
-        window.location.replace('../View/index.php');
+        window.location.replace('../Admin/Brand.php');
         </SCRIPT>";
     }
 

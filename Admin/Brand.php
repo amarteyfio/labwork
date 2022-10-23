@@ -27,7 +27,7 @@ include "../Controller/product_controller.php";
     <h1>Brand Menu</h1>
     <p>Fill the Form Below to Add a Brand</p>
     <form method="POST" action = "../Actions/Add_brand.php">
-        <input type="text" name = "bname" placeholder="Enter a Brand Name">
+        <input type="text" name = "bname" placeholder="Enter a Brand Name" required>
         <br>
         <br>
         <input type="submit" name = "add" value="Add Brand">

@@ -53,6 +53,7 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>form {padding: 1rem;font: 1rem sans-serif;}</style>
+    <style> input {padding: 0.5rem; font: 1em sans-serif;}</style>
     <title>Document</title>
 </head>
 <body>

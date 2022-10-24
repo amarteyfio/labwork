@@ -22,6 +22,9 @@ include "../Controller/product_controller.php";
     <title>Brand Page</title>
 </head>
 <body>
+    <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
+    <style> form {padding:0.5rem;font: 1em sans-serif;}</style>
+    <style> input {padding: 0.5rem; font: 1em sans-serif;}</style>
     <style>#div-2{float: left; padding: 1rem;} #div-1{float: left; padding: 1rem;}</style>
     <div id = "div-1">
     <h1>Brand Menu</h1>

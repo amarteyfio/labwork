@@ -44,7 +44,7 @@ include "../Controller/product_controller.php";
         </thead>
         <tbody>
         <tr>
-        <th>Name</th>
+        <th>Brands</th>
         
         </tr>
         <?php 

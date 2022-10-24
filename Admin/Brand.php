@@ -41,9 +41,6 @@ include "../Controller/product_controller.php";
     <div id = "div-2">
     <table>
         <thead>
-        <tr>
-            <th colspan="2">Brands</th>
-        </tr>
         </thead>
         <tbody>
         <tr>

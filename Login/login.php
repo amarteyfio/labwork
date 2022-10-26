@@ -26,7 +26,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <body>
     
     <h1>Login Form</h1>
-    <form method="POST" action="loginprocess.php">
+    <form method="POST" action="loginprocess.php" style="padding: 1rem;">
         <input type="email" placeholder = "Enter your Email" name="email" required>
         <br>
         <br>

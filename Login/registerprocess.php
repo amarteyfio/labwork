@@ -41,8 +41,10 @@ $user = email_sel_ctr($email);
     
 if(empty($user)){
     addcus_ctr($name,$email,$fpass,$country,$city,$phone);
-
-    header("Location: login.php");
+    $message = 'Account Created';
+        echo "<SCRIPT> alert('$message')
+        window.location.replace('login.php');
+        </SCRIPT>";
 }
 else
 {

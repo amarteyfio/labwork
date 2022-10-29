@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
     
     editcat_ctr($id,$name);
 
-    header("Location: ../Admin/Brand.php");
+    header("Location: ../Admin/Category.php");
 
 }
 

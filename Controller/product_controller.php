@@ -8,6 +8,7 @@
 
 require("../Classes/product_class.php");//include class
 
+//--BRAND CONTROLLERS--//
 
 //Add Brand Controller
 function addbrand_ctr($name){
@@ -24,9 +25,9 @@ function selbrand_ctr($name){
 }
 
 //select all brands controller
-function selallbrands_ctr($table){
+function selall_ctr($table){
     $total = new product_class();
-    return $total->selallbrands($table);
+    return $total->selall($table);
 
 }
 
@@ -41,4 +42,13 @@ function updatebrand_ctr($id,$name){
     $newup = new product_class();
     return $newup->updatebrand($id,$name);
 }
+
+
+//--CATEGORY CONTROLLERS--//
+function addcat_ctr($name){
+    $newcat = new product_class();
+    return $newcat->addcat($name);
+}
+
+
 ?>

@@ -29,10 +29,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         $logout = "../Login/logout.php";//logout
         $register = "../Login/register.php";//register
         $brand = "../Admin/Brand.php";//brand
+        $category = "../Admin/Category.php";//category
 
         if($_SESSION['role'] == 1)
         {
-            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a>";
+            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a>";
         }
         else
         {

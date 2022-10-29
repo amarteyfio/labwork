@@ -18,34 +18,28 @@ include "../Controller/product_controller.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-    <title>Brand Page</title>
 </head>
 <body>
-    <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
-    <style> form {padding:0.5rem;font: 1em sans-serif;}</style>
-    <style> input,button {padding: 0.5rem; font: 1em sans-serif;}</style>
-    <style>#div-2{float: left; padding: 1rem;} #div-1{float: left; padding: 1rem;}</style>
-    <h1>Brand Menu</h1>
-    <div id = "div-2">
+    <div style="float: left; padding: 1rem;">
     <table>
         <thead>
         </thead>
         <tbody>
         <tr>
-        <th>Brands</th>
+        <th>Categories</th>
         
         </tr>
         <?php 
-        $recs = selall_ctr("brands");
+        $recs = selall_ctr("categories");
         
         foreach ($recs as $rec):
         ?>
         <tr>
         <td><?php echo $rec['brand_name'];?></td>
-        <td><?php echo '<a href="../Actions/update_brand.php?id='. $rec['brand_id'] .'" class="mr-3" title="Edit Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
-        
+        <td><?php echo '<a href="../Actions/update_category.php?id='. $rec['cat_id'] .'" class="mr-3" title="Edit Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
         </tr>
         <?php endforeach; ?>
         </tbody>
@@ -53,23 +47,23 @@ include "../Controller/product_controller.php";
     </div>
     <br>
     <br>
-    <div id = "div-1">
-    <p>Fill the Form Below to Add a Brand</p>
-    <form method="POST" id="add_brand_form"> 
-        <input type="text" name = "bname" id="brnd" placeholder="Enter a Brand Name" required>
+    <div>
+    <p>Fill the Form Below to Add a Category</p>
+    <form method="POST" id="add_cat_form"> 
+        <input type="text" name = "cname" id="cat" placeholder="Category Name" required>
         <br>
         <br>
-        <button type="submit" id = "submit">Add Brand</button>
+        <button type="submit" id = "submit">Add Category</button>
     </form>
     </div>
-    
+   
     <script>
-  $("#add_brand_form").submit(function() {
-                var brand= $("#brnd").val();
+  $("#add_cat_form").submit(function() {
+                var brand= $("#cat").val();
         $.ajax({
                     type: "POST",
-                    url: "../Actions/Add_brand.php",
-                    data: "brand=" + brand,
+                    url: "../Actions/Add_category.php",
+                    data: "category=" + category,
                     success: function(data) {
                        alert("success");
                     }
@@ -79,6 +73,6 @@ include "../Controller/product_controller.php";
             });
 </script>
 
-
+    
 </body>
 </html>

@@ -11,7 +11,7 @@ require "../Settings/db_class.php";
 
 class product_class extends db_connection{
 
-//Methods
+    //--BRAND FUNCTIONS--//
 
     //Add Brand
     function addbrand($name){
@@ -30,8 +30,8 @@ class product_class extends db_connection{
     }
 
 
-    //Select All Brands
-    function selallbrands($table){
+    //Select All
+    function selall($table){
 
         $sql = "SELECT * FROM $table";
         $records = $this->db_fetch_all($sql);
@@ -52,6 +52,25 @@ class product_class extends db_connection{
     function updatebrand($id,$name){
 
         $sql="UPDATE brands SET brand_name = '$name' WHERE brand_id = $id";
+
+        return $this -> db_query($sql);
+    }
+
+
+    //--CATEGORY FUNCTIONS--//
+
+    //add Category
+    function addcat($cname){
+        $sql = "INSERT INTO categories (cat_name) VALUES('$cname')";
+
+		return $this->db_query($sql);
+
+    }
+
+    //Edit Category
+    function editcat($id,$cname){
+
+        $sql="UPDATE categories SET cat_name = '$cname' WHERE cat_id = $id";
 
         return $this -> db_query($sql);
     }

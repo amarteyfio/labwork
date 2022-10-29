@@ -23,6 +23,8 @@ include "../Controller/product_controller.php";
     <title>Brand Page</title>
 </head>
 <body>
+<a href='../View/'>MAIN MENU</a> | <a href='../Login/logout.php'>LOGOUT</a>
+<br> 
     <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
     <style> form {padding:0.5rem;font: 1em sans-serif;}</style>
     <style> input,button {padding: 0.5rem; font: 1em sans-serif;}</style>

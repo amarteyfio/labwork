@@ -23,6 +23,8 @@ include "../Controller/product_controller.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 </head>
 <body>
+<a href='../View/'>MAIN MENU</a> | <a href='../Login/logout.php'>LOGOUT</a>
+<br>
     <div style="float: left; padding: 1rem;">
     <table>
         <thead>

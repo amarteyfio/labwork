@@ -19,21 +19,22 @@ include "../Controller/product_controller.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <title>Brand Page</title>
 </head>
 <body>
     <style>th, td {border: 1px solid black;font: 1em sans-serif;padding: 1rem;}</style>
     <style> form {padding:0.5rem;font: 1em sans-serif;}</style>
-    <style> input {padding: 0.5rem; font: 1em sans-serif;}</style>
+    <style> input,button {padding: 0.5rem; font: 1em sans-serif;}</style>
     <style>#div-2{float: left; padding: 1rem;} #div-1{float: left; padding: 1rem;}</style>
     <div id = "div-1">
     <h1>Brand Menu</h1>
     <p>Fill the Form Below to Add a Brand</p>
-    <form method="POST" action = "../Actions/Add_brand.php">
-        <input type="text" name = "bname" placeholder="Enter a Brand Name" required>
+    <form method="POST" id="add_brand_form"> 
+        <input type="text" name = "bname" id="brnd" placeholder="Enter a Brand Name" required>
         <br>
         <br>
-        <input type="submit" name = "add" value="Add Brand">
+        <button type="submit" id = "submit">Add Brand</button>
     </form>
     </div>
     <br>
@@ -61,6 +62,22 @@ include "../Controller/product_controller.php";
         </tbody>
         </table>
     </div>
+    
+    <script>
+  $("#add_brand_form").submit(function() {
+                var brand= $("#brnd").val();
+        $.ajax({
+                    type: "POST",
+                    url: "../Actions/Add_brand.php",
+                    data: "brand=" + brand,
+                    success: function(data) {
+                       alert("success");
+                    }
+                });
+
+
+            });
+</script>
 
 
 </body>

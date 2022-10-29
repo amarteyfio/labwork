@@ -18,9 +18,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION[
 //include controller
 require "../Controller/product_controller.php";
 
-if(isset($_POST['add'])){
-    $name = $_POST['bname'];
-}
+
+$name = $_POST['brand'];
+
 
 //This section checks if brand already exists
  $brandc = selbrand_ctr($name);
@@ -28,10 +28,10 @@ if(isset($_POST['add'])){
  if(empty($brandc)){
     addbrand_ctr($name);
 
-    $message = 'Brand Added!';
+    /*$message = 'Brand Added!';
         echo "<SCRIPT> alert('$message')
         window.location.replace('../View/index.php');
-        </SCRIPT>";
+        </SCRIPT>";*/
 
  }
  else{

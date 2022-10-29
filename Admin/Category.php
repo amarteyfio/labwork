@@ -46,7 +46,6 @@ include "../Controller/product_controller.php";
         </table>
     </div>
     <br>
-    <br>
     <div style="float: left; padding: 1rem;">
     <p>Add a Category</p>
     <form method="POST" id="add_cat_form"> 

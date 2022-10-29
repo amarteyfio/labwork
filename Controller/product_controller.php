@@ -50,5 +50,16 @@ function addcat_ctr($name){
     return $newcat->addcat($name);
 }
 
+//edit controller 
+function editcat_ctr($id,$cname){
+    $new_cat_edit = new product_class();
+    return $new_cat_edit->editcat($id,$cname);
+}
+
+//select category controller
+function selectcat_ctr($id){
+    $newrec = new product_class();
+    return $newrec->selectcat($id);
+}
 
 ?>

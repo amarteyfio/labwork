@@ -74,6 +74,15 @@ class product_class extends db_connection{
 
         return $this -> db_query($sql);
     }
+
+    //Select Category
+    function selectcat($id){
+        $sql = "SELECT * FROM categories WHERE cat_id = $id";
+        $record = $this->db_fetch_one($sql);
+        return $record;
+
+    }
+    
 }
 
 

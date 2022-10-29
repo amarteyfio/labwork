@@ -38,7 +38,7 @@ include "../Controller/product_controller.php";
         foreach ($recs as $rec):
         ?>
         <tr>
-        <td><?php echo $rec['brand_name'];?></td>
+        <td><?php echo $rec['cat_name'];?></td>
         <td><?php echo '<a href="../Actions/update_category.php?id='. $rec['cat_id'] .'" class="mr-3" title="Edit Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
         </tr>
         <?php endforeach; ?>

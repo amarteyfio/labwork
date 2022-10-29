@@ -47,8 +47,8 @@ include "../Controller/product_controller.php";
     </div>
     <br>
     <br>
-    <div>
-    <p>Fill the Form Below to Add a Category</p>
+    <div style="float: left; padding: 1rem;">
+    <p>Add a Category</p>
     <form method="POST" id="add_cat_form"> 
         <input type="text" name = "cname" id="cat" placeholder="Category Name" required>
         <br>
@@ -59,7 +59,7 @@ include "../Controller/product_controller.php";
    
     <script>
   $("#add_cat_form").submit(function() {
-                var brand= $("#cat").val();
+                var category= $("#cat").val();
         $.ajax({
                     type: "POST",
                     url: "../Actions/Add_category.php",

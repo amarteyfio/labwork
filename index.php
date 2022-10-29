@@ -10,7 +10,7 @@
 <body>
     <h1>Menu</h1>
     
-    <a href="Login/login.php">LOGIN!</a> | <a href="Login/register.php">REGISTER</a>
+    <a href="Login/login.php">LOGIN</a> | <a href="Login/register.php">REGISTER</a>
 </body>
 </html>
 

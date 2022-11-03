@@ -11,6 +11,11 @@
     <h1>Menu</h1>
     
     <a href="Login/login.php">LOGIN</a> | <a href="Login/register.php">REGISTER</a>
+    <p>For Admin Testing<br>
+        
+        email = admin@flawlesspay.com<br>
+        password = 1234
+    </p>
 </body>
 </html>
 

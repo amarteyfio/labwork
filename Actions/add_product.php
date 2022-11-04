@@ -16,7 +16,12 @@ require("../Controller/product_controller.php");
 
 
 <?php
-//
+//FILE UPLOAD VARS
+$targetDir = "../Images/Product/";
+$fileName = basename($_FILES["myimage"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+$fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
     if(isset($_POST['submit'])){
         $cat = $_POST['cat'];
         $brand = $_POST['brand'];
@@ -24,9 +29,15 @@ require("../Controller/product_controller.php");
         $prc = $_POST['price'];
         $desc = $_POST['desc'];
         $keys = $_POST['prod_key']; 
-        $img = "";
+        $img = $targetFilePath;
 
         addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);
+
+        move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath);
+
+        //--FILE UPLOAD--//
+        
+
     }
     else{
         echo "Something went wrong";

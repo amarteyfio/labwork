@@ -11,7 +11,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //require controller
 require("../Controller/product_controller.php");
 
-echo "Processing";
+
 ?>
 
 
@@ -29,8 +29,7 @@ echo "Processing";
         echo "Something went wrong";
     }
 
-    var_dump($keys);
-    var_dump($prc);
+
     addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);
 
     header("Location: ../View/product.php");

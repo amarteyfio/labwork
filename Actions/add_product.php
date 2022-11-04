@@ -25,15 +25,14 @@ require("../Controller/product_controller.php");
         $desc = $_POST['desc'];
         $keys = $_POST['prod_key']; 
         $img = "";
+
+        addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);
     }
     else{
         echo "Something went wrong";
     }
 
-    var_dump($cat);
-
-    addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);//add to next page 
-
-    header("Location: ../View/product.php");
+    
+header("Location: ../View/product.php");
 
 ?>

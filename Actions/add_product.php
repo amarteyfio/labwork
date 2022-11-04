@@ -30,7 +30,7 @@ require("../Controller/product_controller.php");
         echo "Something went wrong";
     }
 
-    var_dump($cat)
+    var_dump($cat);
 
     addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);//add to next page 
 

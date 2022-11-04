@@ -33,7 +33,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
         addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);
 
-        move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath);
+        move_uploaded_file($_FILES["myimage"]["tmp_name"], $targetFilePath);
 
         //--FILE UPLOAD--//
         

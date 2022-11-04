@@ -116,7 +116,7 @@ input{
             <input type="text" name = "price" placeholder="Enter Product Price e.g 0.00" required>
             <br>
             <br>
-            <input type="text" name = "desc" placeholder="Product Description" size="45">
+            <textarea name = "desc" placeholder="Product Description" rows="5" cols="60">Enter Product Details</textarea>
             <br>
             <br>
             <label>Product Image</label>
@@ -131,6 +131,7 @@ input{
         
     </div>
     </div>
+    
     
 </body>
 </html>

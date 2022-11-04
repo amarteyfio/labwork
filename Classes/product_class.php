@@ -82,6 +82,14 @@ class product_class extends db_connection{
         return $record;
 
     }
+
+
+    //--PRODUCT FUNCTIONS--//
+    function addprod($prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
+        $sql = "INSERT INTO products (product_cat,product_brand,product_title,product_price,product_desc,product_image,product_keywords) VALUES ('$prod_cat','$prod_brnd','$prod_tit,'$prod_prc','$prod_desc','$prod_img','$prod_key')";
+        return $this-> db_query($sql);
+
+    }
     
 }
 

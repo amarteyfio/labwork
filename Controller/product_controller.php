@@ -62,4 +62,6 @@ function selectcat_ctr($id){
     return $newrec->selectcat($id);
 }
 
+//--PRODUCT CONTROLLERS--//
+
 ?>

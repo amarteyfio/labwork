@@ -16,6 +16,7 @@ require("../Controller/product_controller.php");
 
 
 <?php
+//
     if(isset($_POST['submit'])){
         $cat = $_POST['cat'];
         $brand = $_POST['brand'];
@@ -29,8 +30,9 @@ require("../Controller/product_controller.php");
         echo "Something went wrong";
     }
 
+    var_dump($cat)
 
-    addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);
+    addprod_ctr($cat,$brand,$tit,$prc,$desc,$img,$keys);//add to next page 
 
     header("Location: ../View/product.php");
 

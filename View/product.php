@@ -92,7 +92,7 @@ input{
     </table>
         </div>
     <div class = "Form">
-        <form method = "POST" action = "../Actions/add_product.php">
+        <form method = "POST" action = "../Actions/add_product.php" enctype="multipart/form-data">
             <h1>Fill the form Below to Add a product</h1>
             <label>Select Category</label>
             <select name = "cat">

@@ -63,5 +63,8 @@ function selectcat_ctr($id){
 }
 
 //--PRODUCT CONTROLLERS--//
-
+    function addprod_ctr($prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
+        $new_prod = new product_class();
+        return $new_prod->addprod($prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key);
+    }
 ?>

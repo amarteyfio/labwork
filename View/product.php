@@ -23,6 +23,8 @@ $brands = selall_ctr("brands");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
     <title>Product</title>
 </head>
 <style>
@@ -41,10 +43,25 @@ $brands = selall_ctr("brands");
 
 .Form2 { grid-area: Form; }
 
-table,th,td{
+table,td{
     border: 1px solid black;
-    padding: 0.2rem;
+    padding: 0.5rem;
     font: 14px sans-serif;
+}
+
+th{
+    border: 1px solid black;
+    padding: 0.5rem;
+    font: 16px sans-serif bold;
+}
+
+form{
+    padding: 1rem;
+    font: 14px sans-serif;
+}
+
+input{
+    padding: 0.5rem;
 }
 
 </style>
@@ -63,11 +80,12 @@ table,th,td{
   </tr>
   <?php foreach($prods as $prod):?>
   <tr>
-    <td><?php echo $prod['product_cat'];?></td>
-    <td><?php echo $prod['product_brand'];?></td>
+    <td><?php $category = selectcat_ctr($prod['product_cat']); echo $category['cat_name'];?></td>
+    <td><?php $thisbrand = selectcat_ctr($prod['product_brand']); echo $thisbrand['brand_name'];?></td>
     <td><?php echo $prod['product_title'];?></td>
     <td><?php echo $prod['product_price'];?></td>
     <td><?php echo $prod['product_desc'];?></td>
+    <td><?php echo '<a href="#?id='. $prod['product_id'] .'" class="mr-3" title="Edit Product" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
   </tr>
   <?php endforeach; ?>
     </table>

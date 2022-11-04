@@ -8,6 +8,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
+//include controllers
+require("../Controller/product_controller.php");
+
 //all Product records from prod brand and Cat
 $prods = selall_ctr("products");
 $cats = selall_ctr("categories");
@@ -22,28 +25,10 @@ $brands = selall_ctr("brands");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
 </head>
-<style>
-    .container {  display: grid;
-  grid-template-columns: 1.7fr 1.3fr 0.1fr;
-  grid-template-rows: 4.2fr 0.1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "table Form ."
-    "table Form ."
-    "table Form .";
-}
 
-.Form { grid-area: table; }
-
-.Form2 { grid-area: Form; }
-
-
-</style>
 
 <body>
-    <div class = "container">
-    <div class = "table" >
+    <div id = "table" >
     <table>
   <tr>
     <th>Category</th>
@@ -102,7 +87,6 @@ $brands = selall_ctr("brands");
             <input type="submit" name="submit" value="Add Product">
         </form>
         
-    </div>
     </div>
     
 </body>

@@ -30,7 +30,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         $register = "../Login/register.php";//register
         $brand = "../Admin/Brand.php";//brand
         $category = "../Admin/Category.php";//category
-        $product = "";
+        $product = "product.php";
 
         if($_SESSION['role'] == 1)
         {

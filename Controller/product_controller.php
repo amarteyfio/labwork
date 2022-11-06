@@ -63,8 +63,22 @@ function selectcat_ctr($id){
 }
 
 //--PRODUCT CONTROLLERS--//
+
+    //ADD
     function addprod_ctr($prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
         $new_prod = new product_class();
         return $new_prod->addprod($prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key);
+    }
+
+    //UPDATE
+    function updprod_ctr($prod_id,$prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
+        $new_upd = new product_class();
+        return $new_upd->updprod($prod_id,$prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key);
+    }
+
+    //SELECT
+    function selprod_ctr($id){
+        $select = new product_class();
+        return $select->selprod($id);
     }
 ?>

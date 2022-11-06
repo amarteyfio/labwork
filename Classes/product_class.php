@@ -85,13 +85,27 @@ class product_class extends db_connection{
 
 
     //--PRODUCT FUNCTIONS--//
+    
+    //ADD
     function addprod($prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
         $sql = "INSERT INTO products (product_cat,product_brand,product_title,product_price,product_desc,product_image,product_keywords) VALUES('$prod_cat','$prod_brnd','$prod_tit','$prod_prc','$prod_desc','$prod_img','$prod_key')";
         return $this-> db_query($sql);
 
     }
+
+    //UPDATE
+    function updprod($prod_id,$prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
+        $sql = "UPDATE products SET product_cat = $prod_cat, product_brand = $prod_brnd, product_title = $prod_tit, product_price = $prod_prc, product_desc = $prod_desc, product_image = $prod_img, product_keywords = $prod_key";
+        return $this-> db_query($sql);
+    }
     
-}
+    //SELECT
+    function selprod($id){
+        $sql = "SELECT * FROM products WHERE product_id = $id";
+        $prod = $this-> db_fetch_one($sql);
+        return $prod;
+    }
+}   
 
 
 ?>

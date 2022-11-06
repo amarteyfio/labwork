@@ -95,7 +95,7 @@ class product_class extends db_connection{
 
     //UPDATE
     function updprod($prod_id,$prod_cat,$prod_brnd,$prod_tit,$prod_prc,$prod_desc,$prod_img,$prod_key){
-        $sql = "UPDATE products SET product_cat = $prod_cat, product_brand = $prod_brnd, product_title = $prod_tit, product_price = $prod_prc, product_desc = $prod_desc, product_image = $prod_img, product_keywords = $prod_key WHERE product_id = $prod_id";
+        $sql = "UPDATE products SET product_cat = '$prod_cat', product_brand = '$prod_brnd', product_title = '$prod_tit', product_price = '$prod_prc', product_desc = '$prod_desc', product_image = '$prod_img', product_keywords = '$prod_key' WHERE product_id = $prod_id";
         return $this-> db_query($sql);
     }
     

@@ -44,6 +44,8 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
         updprod_ctr($id,$cat,$brand,$tit,$prc,$desc,$img,$keys);
 
         move_uploaded_file($_FILES["myimage"]["tmp_name"], $targetFilePath);
+
+        header("Location: product.php");
     }
 ?>
 
@@ -61,7 +63,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 </style>
 <body>
 <div class = "Form">
-        <form method = "POST" action = "../Actions/add_product.php" enctype="multipart/form-data">
+        <form method = "POST" enctype="multipart/form-data">
             <h1>UPDATE PRODUCT FORM</h1>
             <label>Select Category</label>
             <br>

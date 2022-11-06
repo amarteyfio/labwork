@@ -64,6 +64,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
         <form method = "POST" action = "../Actions/add_product.php" enctype="multipart/form-data">
             <h1>UPDATE PRODUCT FORM</h1>
             <label>Select Category</label>
+            <br>
             <select name = "cat">
                 <?php foreach($cats as $cat):?>
                 <option value = "<?php echo $cat['cat_id'];?>"><?php echo $cat['cat_name'];?></option>
@@ -72,6 +73,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
             <br>
             <br>
             <label>Select Brand</label>
+            <br>
             <select name = "brand">
                 <?php foreach($brands as $brand):?>
                 <option value = "<?php echo $brand['brand_id'];?>"><?php echo $brand['brand_name'];?></option>
@@ -80,10 +82,12 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
             <br>
             <br>
             <label>Product Title</label>
+            <br>
             <input type="text" name="tit" placeholder="Enter Product Title" required value="<?php echo $product['product_title'];?>">
             <br>
             <br>
             <label>Product PRICE</label>
+            <br>
             <input type="text" name = "price" placeholder="Enter Product Price e.g 0.00" required value="<?php echo $product['product_price'];?>">
             <br>
             <br>
@@ -91,6 +95,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
             <br>
             <br>
             <label>Product Image</label>
+            <br>
             <img src="<?php echo $product['product_image'];?>" width="45" height="45">
             <input type="file" name="myimage">
             <br>

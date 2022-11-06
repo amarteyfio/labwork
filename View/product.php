@@ -67,6 +67,7 @@ input{
 </style>
 
 <body>
+<a href='index.php'>MAIN MENU</a> | <a href='../Login/logout.php'>LOGOUT</a>
     <div class = "container">
     <div class = "table" >
     <table>

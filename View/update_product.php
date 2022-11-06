@@ -79,10 +79,12 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
             </select>
             <br>
             <br>
+            <label>Product Title</label>
             <input type="text" name="tit" placeholder="Enter Product Title" required value="<?php echo $product['product_title'];?>">
             <br>
             <br>
-            <input type="text" name = "price" placeholder="Enter Product Price e.g 0.00" required value="<?php echo $product['product_title'];?>">
+            <label>Product PRICE</label>
+            <input type="text" name = "price" placeholder="Enter Product Price e.g 0.00" required value="<?php echo $product['product_price'];?>">
             <br>
             <br>
             <textarea name = "desc" rows="5" cols="60" placeholder="Enter Product Details"><?php echo $product['product_desc']; ?></textarea>

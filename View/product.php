@@ -86,7 +86,7 @@ input{
     <td><?php echo "Ghc".$prod['product_price'];?></td>
     <td><?php echo $prod['product_desc'];?></td>
     <td><img src="<?php echo $prod['product_image'];?>" width="50px" height="50px"></img></td>
-    <td><?php echo '<a href="../Actions/update_product.php?id='. $prod['product_id'] .'" class="mr-3" title="Edit Product" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
+    <td><?php echo '<a href="update_product.php?id='. $prod['product_id'] .'" class="mr-3" title="Edit Product" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';?></td>
   </tr>
   <?php endforeach; ?>
     </table>

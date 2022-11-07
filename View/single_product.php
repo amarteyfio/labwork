@@ -72,7 +72,7 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?php echo $product['product_title']; ?></h1>
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through"><?php echo $product['product_price']; ?></span>
+                            <span><?php echo $product['product_price']; ?></span>
                         </div>
                         <p class="lead"><?php echo $product['product_desc']; ?></p>
                         <div class="d-flex">
@@ -95,7 +95,7 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="<?php echo $relprod['product_image'];?>" alt="..." width="600" height="700"/>
+                            <img class="card-img-top" src="<?php echo $relprod['product_image'];?>" alt="..." width="450" height="300"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

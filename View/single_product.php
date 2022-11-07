@@ -100,7 +100,7 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder"><a href="single_product.php?id=<?php echo $product['product_id'];?>" style="text-decoration:none color:black"><?php echo $product['product_title']; ?></a></h5>
+                                    <h5 class="fw-bolder"><a href="single_product.php?id=<?php echo $product['product_id'];?>" style="text-decoration:none; color:black;"><?php echo $product['product_title']; ?></a></h5>
                                     <!-- Product price-->
                                     <?php echo $relprod['product_price'];?>
                                 </div>

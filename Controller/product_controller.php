@@ -81,4 +81,10 @@ function selectcat_ctr($id){
         $select = new product_class();
         return $select->selprod($id);
     }
+
+    //SELECT RELATED PRODUCTS
+    function sel_rel_products_ctr($catid){
+        $related = new product_class();
+        return $related->sel_rel_prods($catid);
+    }
 ?>

@@ -105,6 +105,13 @@ class product_class extends db_connection{
         $prod = $this-> db_fetch_one($sql);
         return $prod;
     }
+
+    //SELECT RELATED PRODUCTS
+    function sel_rel_prods($catid){
+        $sql = "SELECT * FROM products WHERE product_cat = $catid";
+        $relprod = $this->db_fetch_all($sql);
+        return $relprod;
+    }
 }   
 
 

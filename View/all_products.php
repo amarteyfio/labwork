@@ -90,7 +90,7 @@ $products = selall_ctr("products");
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="single_product.php?id=.<?php echo $product['product_id'];?>">View Product</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="single_product.php?id=<?php echo $product['product_id'];?>">View Product</a></div>
                             </div>
                         </div>
                     </div>

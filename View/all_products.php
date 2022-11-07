@@ -80,7 +80,7 @@ $products = selall_ctr("products");
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder"><a href="single_product.php?id=<?php echo $product['product_id'];?>"><?php echo $product['product_title']; ?></a></h5>
+                                    <h5 class="fw-bolder"><a href="single_product.php?id=<?php echo $product['product_id'];?>" style="text-decoration:none color:black"><?php echo $product['product_title']; ?></a></h5>
                                     <!-- Product price-->
                                     Ghc <?php echo $product['product_price'];?>
                                 </div>

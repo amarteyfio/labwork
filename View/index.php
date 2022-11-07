@@ -31,14 +31,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         $brand = "../Admin/Brand.php";//brand
         $category = "../Admin/Category.php";//category
         $product = "product.php";
+        $allprod = "all_products.php";
 
         if($_SESSION['role'] == 1)
         {
-            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a>";
+            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a>";
         }
         else
         {
-           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href='$product'>ADD PRODUCT</a>";
+           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a>";
         }
 
         ?>

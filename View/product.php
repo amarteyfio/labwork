@@ -45,7 +45,6 @@ $brands = selall_ctr("brands");
 
 table,td{
     border: 1px solid black;
-    padding: 0.5rem;
     font: 14px sans-serif;
 }
 

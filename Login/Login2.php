@@ -28,7 +28,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
     
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../CSS/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -85,7 +85,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
     
     <!-- Stylesheet-->
-    <link href="signin.css" rel="stylesheet">
+    <link href="../CSS/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     

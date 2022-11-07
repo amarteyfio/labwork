@@ -72,7 +72,7 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder"><?php echo $product['product_title']; ?></h1>
                         <div class="fs-5 mb-5">
-                            <span><?php echo $product['product_price']; ?></span>
+                            <span>GHC <?php echo $product['product_price']; ?></span>
                         </div>
                         <p class="lead"><?php echo $product['product_desc']; ?></p>
                         <div class="d-flex">

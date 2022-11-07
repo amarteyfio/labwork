@@ -86,10 +86,18 @@ $products = selall_ctr("products");
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Product</a></div>
+                            <div class="btn-toolbar mb-2 mb-md-0">
+                           <div class="btn-group me-2">
+                                <form action = 'app/resources/student/addStu.php'>
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                                </form>
+                                <br>
+                                <form action = 'app/resources/student/editStu.php'>
+                                <button type="submit" class="btn btn-sm btn-outline-secondary">View Product</button>
+                                </form>
                             </div>
+          
+        </div>
                         </div>
                     </div>
                     <?php endforeach; ?>   

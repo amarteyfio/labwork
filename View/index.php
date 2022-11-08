@@ -35,11 +35,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         if($_SESSION['role'] == 1)
         {
-            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a>";
+            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <input class='form-control form-control-dark w-100' type='text' id = 'myInput' onekeyup = 'myFunction()' placeholder='Search' aria-label='Search'>";
         }
         else
         {
-           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a>";
+           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <input class='form-control form-control-dark w-100' type='text' id = 'myInput' onekeyup = 'myFunction()' placeholder='Search' aria-label='Search'>";
         }
 
         ?>

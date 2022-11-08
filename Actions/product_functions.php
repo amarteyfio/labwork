@@ -12,4 +12,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require("../Controller/product_controller.php");
 
 
+if(isset($_POST['search'])){
+    $search_term = $_POST['term'];
+
+    var_dump($search_term);
+}
 ?>

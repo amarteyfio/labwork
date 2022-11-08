@@ -87,4 +87,10 @@ function selectcat_ctr($id){
         $related = new product_class();
         return $related->sel_rel_prods($catid);
     }
+
+    //PRODUCT SEARCH CONTROLLER
+    function product_search_ctr($term){
+        $newsearch = new product_class();
+        return $newsearch->product_search($term);
+    }
 ?>

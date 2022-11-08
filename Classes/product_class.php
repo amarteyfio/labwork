@@ -112,6 +112,13 @@ class product_class extends db_connection{
         $relprod = $this->db_fetch_all($sql);
         return $relprod;
     }
+
+    //PRODUCT SEARCH
+    function product_search($term){
+        $sql = "SELECT * FROM 'products' WHERE 'product_title' LIKE '%$term%' ORDER BY 'product_title'";
+        $results = $this->db_fetch_all($sql);
+        return $results;
+    }
 }   
 
 

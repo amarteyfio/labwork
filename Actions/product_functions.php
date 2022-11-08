@@ -15,6 +15,11 @@ require("../Controller/product_controller.php");
 if(isset($_POST['search'])){
     $search_term = $_POST['term'];
 
-    var_dump($search_term);
+    //Search
+    $results = product_search_ctr($search_term);
+
+    $_SESSION["search_results"] = $results;
+
+    header("Location: ../View/product_search_results.php");
 }
 ?>

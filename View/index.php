@@ -35,7 +35,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         if($_SESSION['role'] == 1)
         {
-            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <form action = '../Actions/product_functions.php' method 'POST'> <input type = 'text' name = 'term' id = 'search_term'><input type = 'submit' name = 'search' id = 'search'></form>";
+            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <br><form action = '../Actions/product_functions.php' method 'POST'> <input type = 'text' name = 'term' id = 'search_term' placeholder = 'Search for a product'><input type = 'submit' name = 'search' id = 'search' value = 'Search'></form>";
         }
         else
         {

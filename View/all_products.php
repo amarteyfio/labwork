@@ -47,6 +47,7 @@ $products = selall_ctr("products");
                                 <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                             </ul>
                         </li>
+                        <input class="form-control form-control-dark w-100" type="text" id = "myInput" onekeyup = "myFunction()" placeholder="Search" aria-label="Search">
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">

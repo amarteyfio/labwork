@@ -16,6 +16,11 @@
         email = admin@flawlesspay.com<br>
         password = 1234
     </p>
+
+    <form action="/Actions/product_functions.php" method="POST">
+        <input type="text" name="term" placeholder="search">
+        <input type="submit" name="submit" value="search">
+    </form>
 </body>
 </html>
 

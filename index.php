@@ -19,7 +19,7 @@
 
     <form action="/Actions/product_functions.php" method="POST">
         <input type="text" name="term" placeholder="search">
-        <input type="submit" name="submit" value="search">
+        <input type="submit" name="search" value="search">
     </form>
 </body>
 </html>

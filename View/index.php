@@ -37,11 +37,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         if($_SESSION['role'] == 1)
         {
-            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <br><br><form action = '../Actions/product_functions.php' method 'POST'> <input type = 'text' name = 'term' id = 'search_term' placeholder = 'Search for a product'><input type = 'submit' name = 'search' id = 'search' value = 'Search <i class='fa fa-search' aria-hidden='true'></i>'></form>";
+            echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href = '$brand'>BRAND</a> | <a href = '$category'>CATEGORY</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <br><br><form action = '../Actions/product_functions.php' method 'POST'> <input type = 'text' name = 'term' id = 'search_term' placeholder = 'Search...'><input type = 'submit' name = 'search' id = 'search' value = '<i class='fa fa-search' aria-hidden='true'></i>'></form>";
         }
         else
         {
-           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <br><br><form action = '../Actions/product_functions.php' method 'POST'> <input type = 'text' name = 'term' id = 'search_term' placeholder = 'Search for a product'><input type = 'submit' name = 'search' id = 'search' value = 'Search <i class='fa fa-search' aria-hidden='true'></i>'></form>";
+           echo "<a href='$logout'>LOGOUT</a> | <a href='$register'>REGISTER</a> | <a href='$product'>ADD PRODUCT</a> | <a href='$allprod'>ALL PRODUCTS</a> | <br><br><form action = '../Actions/product_functions.php' method 'POST'> <input type = 'text' name = 'term' id = 'search_term' placeholder = 'Search...'><input type = 'submit' name = 'search' id = 'search' value = '<i class='fa fa-search' aria-hidden='true'></i>'></form>";
         }
 
         ?>

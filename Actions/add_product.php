@@ -48,7 +48,7 @@ require("../Controller/product_controller.php");
         echo "Something went wrong";
     }
 
-    
+//HEADER
 header("Location: ../View/product.php");
 
 ?>

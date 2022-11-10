@@ -12,13 +12,24 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 //REQUIRE CONTROLLERS
 require("../Controller/cart_controller.php");
+require("../Controller/product_controller.php");
 
 //--DETERMINF CLIENT IP ADDRESS--//
-if(isset($_POST[''])){
+    $pid = $_GET['pid'];
+    
+    //Get that product
+    $product = selprod_ctr($pid);
+
+    //iP address
     $ip = getIP_ctr();
 
     
-}
+    var_dump($ip);
+    //category
+
+
+
+
 
 
 ?>

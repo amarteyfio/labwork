@@ -33,5 +33,10 @@ class cart_class extends db_connection{
 
         
     }
+
+    //SELECT FROM CART USING PID
+    function selcart($pid){
+    
+    }
 }
 ?>

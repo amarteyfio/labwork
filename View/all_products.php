@@ -12,6 +12,37 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require("../Controller/product_controller.php");
 
 $products = selall_ctr("products");
+
+//Maximum Products on a page
+$max_products_on_page = 8; 
+
+//Pagination 
+$current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 1;
+
+//this variable ensures it starts selecting from the last item it ended on 
+$start_frm = ($current_page - 1) * $max_products_on_page;
+
+//get the products per page
+$prods = prod_page_ctr($start_frm,$current_page);
+
+//total number of products
+$prod_num = prod_count_ctr();
+?>
+
+<?php
+//function to get count of product array
+function getac($array){
+    $count = 0;
+    foreach($array as $arr){
+        if(empty($arr['product_id']) == false){
+            $count++;
+        }
+
+    }
+    return $count;
+    
+
+}
 ?>
 
 
@@ -94,6 +125,14 @@ $products = selall_ctr("products");
                     </div>
                     <?php endforeach; ?>   
                 </div>
+            <div class="buttons">
+                <?php if ($current_page > 1): ?>
+                <a href="index.php?page=products&p=<?=$current_page-1?>">Prev</a>
+                <?php endif; ?>
+                <?php if ($prod_num > ($current_page * $num_products_on_each_page) - $max_products_on_page + getac($prods)): ?>
+                <a href="index.php?page=products&p=<?=$current_page+1?>">Next</a>
+                <?php endif; ?>
+            </div>
             </div>
         </section>
         <!-- Footer-->

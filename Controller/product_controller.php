@@ -93,4 +93,16 @@ function selectcat_ctr($id){
         $newsearch = new product_class();
         return $newsearch->product_search($term);
     }
+
+    //PRODUCT COUNT CONTROLLER
+    function prod_count_ctr(){
+        $a = new product_class();
+        return $a->prod_count();
+    }
+
+    //GET PRODUCTS BY PAGE CTRL
+    function prod_page_ctr($page,$limit){
+        $page = new product_class();
+        return $page->prod_page($page, $limit);
+    }
 ?>

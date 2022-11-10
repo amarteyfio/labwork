@@ -119,6 +119,20 @@ class product_class extends db_connection{
         $results = $this->db_fetch_all($sql);
         return $results;
     }
+
+    //GET NUMBER OF PRODUCTS
+    function prod_count(){
+        $sql = "SELECT * FROM products";
+        $count = $this->db_count();
+        return $count;
+    }
+
+    //GET PROCUCTS BY PAGE(PAGINATION)
+    function prod_page($page,$limit){
+        $sql = "SELECT * FROM PRODUCTS DESC LIMIT $page,$limit";
+        $p = $this->db_fetch_all($sql);
+        return $p;
+    }
 }   
 
 

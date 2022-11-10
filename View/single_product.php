@@ -53,11 +53,13 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                         </li>
                     </ul>
                     <form class="d-flex">
+                        <a href="cart.php">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
+                        </a>
                     </form>
                 </div>
             </div>
@@ -75,10 +77,12 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                         <p class="lead"><?php echo $product['product_desc']; ?></p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <a href="../Actions/add_to_cart.php">
                             <button class="btn btn-outline-dark flex-shrink-0" type="submit">
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to cart
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +109,7 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../Actions/add_to_cart.php?pid=<?php echo $relprod['product_id'];?>">Add to Cart</a></div>
                             </div>
                         </div>
                     </div>

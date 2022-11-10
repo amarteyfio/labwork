@@ -128,7 +128,7 @@ function getac($array){
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../Actions/add_to_cart.php?pid=<?php echo $product['product_id'];?>">Add to Cart</a></div>
                             </div>
                         </div>
                     </div>

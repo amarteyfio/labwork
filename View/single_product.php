@@ -77,7 +77,7 @@ $related_products = sel_rel_products_ctr($product['product_cat']);
                         <p class="lead"><?php echo $product['product_desc']; ?></p>
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <a href="../Actions/add_to_cart.php">
+                            <a href="../Actions/add_to_cart.php?pid=<?php echo $product['product_id'];?>">
                             <button class="btn btn-outline-dark flex-shrink-0" type="submit">
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to cart

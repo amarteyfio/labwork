@@ -8,16 +8,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-// Page is set to home (home.php) by default, so when the visitor visits that will be the page they see.
+//require controller
+require("../Controller/product_controller.php");
+
+$products = selall_ctr("products");
+
+/* Page is set to home (home.php) by default, so when the visitor visits that will be the page they see.
 $page = isset($_GET['page']) && file_exists($_GET['page'] . '.php') ? $_GET['page'] : 'home';
 // Include and show the requested page
 include $page . '.php';
 
 
-//require controller
-require("../Controller/product_controller.php");
 
-$products = selall_ctr("products");
 
 //Maximum Products on a page
 $max_products_on_page = 8; 
@@ -49,6 +51,7 @@ function getac($array){
     
 
 }
+*/
 ?>
 
 
@@ -131,14 +134,6 @@ function getac($array){
                     </div>
                     <?php endforeach; ?>   
                 </div>
-            <div class="buttons">
-                <?php if ($current_page > 1): ?>
-                <a href="index.php?page=products&p=<?=$current_page-1?>">Prev</a>
-                <?php endif; ?>
-                <?php if ($prod_num > ($current_page * $num_products_on_each_page) - $max_products_on_page + getac($prods)): ?>
-                <a href="index.php?page=products&p=<?=$current_page+1?>">Next</a>
-                <?php endif; ?>
-            </div>
             </div>
         </section>
         <!-- Footer-->

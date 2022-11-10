@@ -18,7 +18,7 @@ require("../Controller/cart_controller.php");
     $pid = $_GET['pid'];
     
     //Get that product
-    $product = selprod_ctr($pid);
+    //$product = selprod_ctr($pid);
 
     //iP address
     $ip = getIP_ctr();

@@ -22,16 +22,16 @@ require("../Controller/cart_controller.php");
     $cust_id = $_SESSION["id"];
 
     //iP address
-    //$ip = getIP_ctr();
+    $ip = getIP_ctr();
 
 
     
 
     //checking if prouct is in table
-    $cartprod = selfrclass_ctr($pid,$c_id);
+    $cartprod = selfrclass_ctr($pid,$cust_id);
 
 
-    if(check_ctr($pid,$c_id) == true)
+    if(check_ctr($pid,$cust_id) == true)
     {
     $temp_qty = intval($cartprod["qty"]) + $qty;//add one to quantity
     qty_increase_ctr($pid,$temp_qty);
@@ -39,7 +39,7 @@ require("../Controller/cart_controller.php");
     }
     else
     {
-        cart_add_ctr($pid,$ip,$c_id,$qty);
+        cart_add_ctr($pid,$ip,$cust_id,$qty);
 
         header("Location: ../View/all_products.php");
     }

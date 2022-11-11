@@ -63,7 +63,7 @@ $results = $_SESSION["search_results"];
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="<?php echo $product['product_image'];?>" alt="<?php echo $product['product_title']; ?>" width="450" height="300" />
+                            <img class="card-img-top" src="<?php echo $product['product_image'];?>" alt="<?php echo $product['product_title']; ?>&qty=1" width="450" height="300" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">

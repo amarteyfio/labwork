@@ -13,6 +13,8 @@ require("../Controller/product_controller.php");
 
 $products = selall_ctr("products");
 
+$cart_count = cart_count_ctr($_SESSION['id']);
+
 /* Page is set to home (home.php) by default, so when the visitor visits that will be the page they see.
 $page = isset($_GET['page']) && file_exists($_GET['page'] . '.php') ? $_GET['page'] : 'home';
 // Include and show the requested page
@@ -93,7 +95,7 @@ function getac($array){
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill"><?php echo $cart_count;?></span>
                         </button>
                     </form>
                 </div>
@@ -128,7 +130,7 @@ function getac($array){
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../Actions/add_to_cart.php?pid=<?php echo $product['product_id'];?>">Add to Cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../Actions/add_to_cart.php?pid=<?php echo $product['product_id'];?>&qty=1">Add to Cart</a></div>
                             </div>
                         </div>
                     </div>

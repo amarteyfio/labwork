@@ -133,6 +133,22 @@ class product_class extends db_connection{
         $p = $this->db_fetch_all($sql);
         return $p;
     }
+
+
+     //FOR CART COUNT
+    function cart_count($cid){
+        $sql = "SELECT * FROM cart WHERE c_id = $cid";
+        $c = $this->db_fetch_all($sql);
+        $count = 0;
+        foreach($c as $arr){
+            if(empty($arr['p_id']) == false){
+                $count++;
+            }
+    
+        }
+        return $count;
+    
+    }
 }   
 
 

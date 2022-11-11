@@ -105,4 +105,10 @@ function selectcat_ctr($id){
         $page = new product_class();
         return $page->prod_page($page, $limit);
     }
+
+    //CART COUNT CTR
+    function cart_count_ctr($cid){
+        $count = new product_class();
+        return $count->cart_count($cid);
+    }
 ?>

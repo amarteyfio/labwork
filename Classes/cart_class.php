@@ -34,9 +34,47 @@ class cart_class extends db_connection{
         
     }
 
-    //SELECT FROM CART USING PID
-    function selcart($pid){
-    
+    //ALL ITEMS IN SPECIFIC CART
+    function cart_itm($id){
+        $sql = "SELECT * FROM cart WHERE c_id = $id";
+        $items = $this->db_fetch_all($sql);
+        return $items;
     }
+
+
+    //FUNCTION TO CHECK IF AN ITEM IS ALREADY IN CART
+    function check($pid,$cid){
+        $sql = "SELECT * FROM cart WHERE p_id = $pid AND c_id = $cid";
+        $items = $this->db_fetch_all($sql);
+
+        //if empty
+        if(empty($items) == false){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    //SELECT BY PID
+    function selfrcart($pid,$cid){
+        $sql = "SELECT * FROM cart WHERE p_id = $pid AND c_id = $cid";
+        $items = $this->db_fetch_one($sql);
+        return $items;
+
+    }
+
+
+    //FOLLOWING FUCNTIONS ARE FOR PRODUCTS
+    //SELECT PRODUCT
+
+    function cselprod($id){
+        $sql = "SELECT * FROM products WHERE product_id = $id";
+        $prod = $this-> db_fetch_one($sql);
+        return $prod;
+    }
+
+    
 }
 ?>

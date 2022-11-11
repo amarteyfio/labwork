@@ -12,19 +12,37 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 //REQUIRE CONTROLLERS
 require("../Controller/cart_controller.php");
-require("../Controller/product_controller.php");
 
 //--DETERMINF CLIENT IP ADDRESS--//
     $pid = $_GET['pid'];
+
+    $qty = $_GET['qty'];
     
     //Get that product
-    $product = selprod_ctr($pid);
+    $cust_id = $_SESSION["id"];
 
     //iP address
     $ip = getIP_ctr();
+
+
     
-    var_dump($ip);
-    //category
+
+    //checking if prouct is in table
+    $cartprod = selfrclass_ctr($pid,$c_id);
+
+
+    if(check_ctr($pid,$c_id) == true)
+    {
+    $temp_qty = intval($cartprod["qty"]) + $qty;//add one to quantity
+    qty_increase_ctr($pid,$temp_qty);
+    header("Location: ../View/all_products.php");
+    }
+    else
+    {
+        cart_add_ctr($pid,$ip,$c_id,$qty);
+
+        header("Location: ../View/all_products.php");
+    }
 
 
 

@@ -22,7 +22,7 @@ require("../Controller/cart_controller.php");
     $cust_id = $_SESSION["id"];
 
     //iP address
-    $ip = getIP_ctr();
+    //$ip = getIP_ctr();
 
 
     

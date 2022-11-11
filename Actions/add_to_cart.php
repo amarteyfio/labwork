@@ -23,18 +23,10 @@ require("../Controller/cart_controller.php");
 
     //iP address
     $ip = getIP_ctr();
-
-    echo $pid;
-
-    echo $qty;
-
-    echo $cust_id;
-
-    echo $ip;
+    
 
 
     
-    /*
 
     //checking if prouct is in table
     $cartprod = selfrclass_ctr($pid,$cust_id);
@@ -54,7 +46,7 @@ require("../Controller/cart_controller.php");
     }
 
 
-    */
+
 
 
 

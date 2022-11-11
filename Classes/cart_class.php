@@ -6,7 +6,7 @@ class cart_class extends db_connection{
     
     //ADD TO CART
     function cart_add($p_id,$ip_add,$c_id,$qty){
-        $sql = "INSERT INTO cart (p_id,ip_add,c_id,qty) VALUES ($p_id,$ip_add,$c_id,$qty)";
+        $sql = "INSERT INTO cart (p_id,ip_add,c_id,qty) VALUES ('$p_id','$ip_add','$c_id','$qty')";
         return $this->db_query($sql);
     }   
 

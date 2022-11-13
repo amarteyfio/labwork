@@ -66,7 +66,7 @@ $cart_items = cart_itm_ctr($id);
          $prod = cselprod_ctr($item["p_id"]);
          $total = $total + intval($prod['product_price'] * $item['qty']);
         ?>
-        <li><?php echo $prod['product_title'];?> | QTY : <input type="text" id = "quant" maxlength = "2" value ="<?php echo $item['qty'];?>"> | <button type = "submit" onclick="manageQuant()">Manage QTY</button> | <a href="../Actions/remove_from_cart.php?pid=<?php echo $item['p_id'];?>" ><button onclick="confirm(Are you sure you want to remove this item?)">Remove From Cart</button></a></li>
+        <li><?php echo $prod['product_title'];?> | QTY : <input type="text" id = "quant" size = "2" maxlength="2" value ="<?php echo $item['qty'];?>"><a onclick="quantadd()"><button type = "submit" id="sub">Manage QTY</button></a> | <a href="../Actions/remove_from_cart.php?pid=<?php echo $item['p_id'];?>" onclick="return confirm('Remove from Cart?')"><Button>Remove From Cart</Button></a></li>
         <br>
         <?php endforeach; ?>
     </ul>
@@ -77,11 +77,10 @@ $cart_items = cart_itm_ctr($id);
     </div>
         
         <script>
-        function quantadd() {
-                var quant = document.getElementById("quant").value;
-                alert(quant);
-                window.location.replace("../Actions/manage_quantity.php?pid=<?php echo $item['pid'];?>&qty="quant);
-            }
+        function quantadd(){
+            var quant = document.getElementById("quant").value;
+            window.location.replace("../Actions/manage_quantity.php?pid=<?php echo $item['p_id'];?>&qty="+quant);
+        }
         </script>
 </body>
 </html>

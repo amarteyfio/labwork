@@ -51,3 +51,14 @@ function check_ctr($pid,$cid){
     return $check->check($pid,$cid);
 }
 
+//REMOVE FROM CART
+function cart_remove_ctr($pid,$cid){
+    $rem = new cart_class();
+    return $rem->cart_remove($pid,$cid);
+}
+
+//EDIT QTY CTR
+function editqty_ctr($pid,$cid,$qty){
+    $edit = new cart_class();
+    return $edit->editqty($pid,$cid,$qty);
+}

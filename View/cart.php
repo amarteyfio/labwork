@@ -25,13 +25,67 @@ $cart_items = cart_itm_ctr($id);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../CSS/all_products_style.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <h1>CART</h1> <p>Total : </p>
-    <ul>
-        <?php foreach($cart_items as $item):?>
-        <li><?php $prod = cselprod_ctr($item["p_id"]); echo $prod['product_title'];?> | QTY : <?php echo $item['qty'];?> | <a href=""><button>Manage</button></a> | <a href=""><button>Remove From Cart</button></a></li>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.php">Shopn</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                            </ul>
+                        </li>
+                        <input class="form-control form-control-dark w-100" type="text" id = "myInput" onekeyup = "myFunction()" placeholder="Search" aria-label="Search">
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    <!--NAV-->
+    <div style="padding: 1rem; float:left;">
+    <h1>CART</h1> 
+    <ul style="padding: 1px;">
+        <?php
+        $total = 0; 
+        foreach($cart_items as $item):
+         $prod = cselprod_ctr($item["p_id"]);
+         $total = $total + intval($prod['product_price'] * $item['qty']);
+        ?>
+        <li><?php echo $prod['product_title'];?> | QTY : <input type="text" id = "quant" maxlength = "2" value ="<?php echo $item['qty'];?>"> | <button type = "submit" onclick="manageQuant()">Manage QTY</button> | <a href="../Actions/remove_from_cart.php?pid=<?php echo $item['p_id'];?>" ><button onclick="confirm(Are you sure you want to remove this item?)">Remove From Cart</button></a></li>
+        <br>
         <?php endforeach; ?>
     </ul>
+    <p>Total : GHC <?php echo $total; ?></p>
+    <br>
+    <button style="padding: 1px;">Checkout</button>
+
+    </div>
+        
+        <script>
+        function quantadd() {
+                var quant = document.getElementById("quant").value;
+                alert(quant);
+                window.location.replace("../Actions/manage_quantity.php?pid=<?php echo $item['pid'];?>&qty="quant);
+            }
+        </script>
 </body>
 </html>
+
+
+
+

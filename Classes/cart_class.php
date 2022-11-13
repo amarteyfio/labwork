@@ -75,6 +75,17 @@ class cart_class extends db_connection{
         return $prod;
     }
 
+    //REMOVE FROM CART
+    function cart_remove($pid,$cid){
+        $sql = "DELETE FROM cart WHERE p_id = $pid AND c_id = $cid";
+        $this->db_query($sql);
+    }
+
+    //EDIT QTY
+    function editqty($pid,$cid,$qty){
+        $sql = "UPDATE cart SET qty = $qty WHERE p_id = $pid AND c_id = $cid";
+        $this->db_query($sql);
+    }
     
 }
 ?>

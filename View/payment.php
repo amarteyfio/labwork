@@ -70,7 +70,7 @@ $user = selcus_ctr($_SESSION['id']);
         ?>
             <p>Item: <?php echo $prod['product_title'];?> x<?php echo $item['qty'];?></p>
         <?php endforeach;?>
-        <p>Total: <?php $total; ?></p>
+        <p>Total: <?php echo $total; ?></p>
         <button type="submit" onclick="payWithPaystack()">Pay</button>
         </div>
 

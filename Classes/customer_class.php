@@ -5,7 +5,7 @@
  *This class contains all the methods for customer mangement 
  */
 
-require("../Settings/db_class.php");
+include_once("../Settings/db_class.php");
 class customer_class extends db_connection{
 
     //Add New Customer

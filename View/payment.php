@@ -8,11 +8,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-require "../Controller/cart_controller.php";
+include "../Controller/cart_controller.php";
+include_once "../Controller/customer_controller.php";
 
 $id = $_SESSION['id'];
 
 $cart_items = cart_itm_ctr($id);
+
+$user = selcus_ctr($_SESSION['id']);
+
 
 
 
@@ -56,35 +60,68 @@ $cart_items = cart_itm_ctr($id);
                 </div>
             </div>
         </nav>
-    <!--NAV-->
-    <div style="padding: 1rem; float:left;">
-    <h1>CART</h1> 
-    <ul style="padding: 1px;">
-        <?php
-        $total = 0; 
-        foreach($cart_items as $item):
-         $prod = cselprod_ctr($item["p_id"]);
-         $total = $total + intval($prod['product_price'] * $item['qty']);
-        ?>
-        <li><?php echo $prod['product_title'];?> | QTY : <input type="text" id = "<?php $prod['product_id'];?>" size = "2" maxlength="2" value ="<?php echo $item['qty'];?>"><a onclick="quantadd(<?php $prod['product_id']?>)"><button type = "submit" id="sub">Manage QTY</button></a> | <a href="../Actions/remove_from_cart.php?pid=<?php echo $item['p_id'];?>" onclick="return confirm('Remove from Cart?')"><Button>Remove From Cart</Button></a></li>
         <br>
-        <?php endforeach; ?>
-    </ul>
-    <p>Total : GHC <?php echo $total; ?></p>
-    <br>
-    <a href="payment.php"><button style="padding: 1px;">Checkout</button></a>
+        <br>
+        <div style="padding: 2rem; font: 16px sans-serif;">
+        <h1>Order Summary:</h1>
+        <?php foreach($cart_items as $item):
+        $prod = cselprod_ctr($item["p_id"]);
+        $total = $total + intval($prod['product_price'] * $item['qty']);
+        ?>
+            <p>Item: <?php echo $prod['product_title'];?> x<?php echo $item['qty'];?></p>
+        <?php endforeach;?>
+        <p>Total: <?php $total; ?></p>
+        <button type="submit" onclick="payWithPaystack()">Pay</button>
+        </div>
 
-    </div>
-        
         <script>
-        function quantadd(x){
-            var quant = document.getElementById(x).value;
-            window.location.replace("../Actions/manage_quantity.php?pid="+x+"&qty="+quant);
-        }
-        </script>
-</body>
+    /* const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false); */
+    function payWithPaystack() {
+        event.preventDefault();
+        let handler = PaystackPop.setup({
+
+            key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
+            email: <?php echo $user['customer_email'];?>,
+            amount: <?php echo (intval($total) * 100);?>,
+            currency: 'GHS',
+            ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+            // label: "Optional string that replaces customer email"
+            onClose: function(){
+            alert('Window closed.');
+            },
+            callback: function(response){
+            let message = 'Payment complete! Reference: ' + response.reference;
+            alert(message);
+            // add_payment_detail_ctrl
+            email = <?php echo $user['customer_email'];?>;
+            amount = <?php echo (intval($total));?>;
+            var dataString = 'email='+ email + '&amount='+ amount;
+            if (response.status=='success'){
+            //alert("Please Fill All Fields");
+            
+            
+           
+            $.ajax({
+            type: "POST",
+            url: "../Actions/process_payment.php?amt="+amount,
+            data: dataString,
+            cache: false,
+            success: function(result){
+            // alert(result);
+            window.location="payment_success.php";
+            // window.location = "pay"
+            }
+            });
+          }
+          
+
+            }
+            
+
+        });
+        handler.openIframe();
+    }
+</script>
+    </body>
 </html>
-
-
-
-

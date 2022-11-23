@@ -6,7 +6,7 @@
  * This class contains the methods for the products
  */
 
-require "../Settings/db_class.php";
+include_once "../Settings/db_class.php";
 
 
 class product_class extends db_connection{

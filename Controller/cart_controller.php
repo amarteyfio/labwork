@@ -62,3 +62,27 @@ function editqty_ctr($pid,$cid,$qty){
     $edit = new cart_class();
     return $edit->editqty($pid,$cid,$qty);
 }
+
+//New order
+function ord_ctr($cid,$inv,$date){
+    $ord = new cart_class();
+    return $ord->ord($cid,$inv,$date);
+}
+
+//add payment 
+function payment_ctr($amt,$order_id,$date){
+    $pay = new cart_class();
+    return $pay->payment($amt,$order_id,$date);
+}
+
+//SELECT NEW ORDER
+function ord_sel_ctr(){
+    $sel = new cart_class();
+    return $sel->ord_sel();
+}
+
+function remcart_ctr($cid)
+{
+    $rem = new cart_class();
+    return $rem->remcart($cid);
+}

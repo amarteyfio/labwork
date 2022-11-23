@@ -1,6 +1,6 @@
 <?php
 //require db class
-require("../Settings/db_class.php");
+include_once("../Settings/db_class.php");
 
 class cart_class extends db_connection{
     
@@ -78,14 +78,37 @@ class cart_class extends db_connection{
     //REMOVE FROM CART
     function cart_remove($pid,$cid){
         $sql = "DELETE FROM cart WHERE p_id = $pid AND c_id = $cid";
-        $this->db_query($sql);
+        return $this->db_query($sql);
     }
 
     //EDIT QTY
     function editqty($pid,$cid,$qty){
         $sql = "UPDATE cart SET qty = $qty WHERE p_id = $pid AND c_id = $cid";
-        $this->db_query($sql);
+        return $this->db_query($sql);
     }
     
+    //New order
+    function ord($cid,$inv,$date){
+        $sql = "INSERT INTO orders (customer_id,invoice_no,order_date,order_status) VALUES ('$cid','$inv','$date','SUCCESS')";
+        return $this->db_query($sql);
+    }
+
+    //add payment 
+    function payment($amt,$order_id,$date){
+        $sql = "INSERT INTO payment (amt,customer_id,currency,payment_date) VALUES ('$amt','$order_id','$date')";
+    }
+
+    //SELECT NEW ORDER
+    function ord_sel(){
+        $sql = "SELECT order_id FROM orders ORDER BY order_id DESC LIMIT 1";
+        return $this -> db_fetch_one($sql);
+    }
+
+    //REMOVE FROM CART
+    function remcart($cid)
+    {
+        $sql = "DELETE FROM cart WHERE c_id = $cid";
+        return $this->db_query($sql);
+    }
 }
 ?>

@@ -66,7 +66,7 @@ $cart_items = cart_itm_ctr($id);
          $prod = cselprod_ctr($item["p_id"]);
          $total = $total + intval($prod['product_price'] * $item['qty']);
         ?>
-        <li><?php echo $prod['product_title'];?> | QTY : <input type="text" id = "<?php $prod['product_id'];?>" size = "2" maxlength="2" value ="<?php echo $item['qty'];?>"><a onclick="quantadd(<?php echo $prod['product_id'];?>)"><button type = "submit" id="sub">Manage QTY</button></a> | <a href="../Actions/remove_from_cart.php?pid=<?php echo $item['p_id'];?>" onclick="return confirm('Remove from Cart?')"><Button>Remove From Cart</Button></a></li>
+        <li><?php echo $prod['product_title'];?> | QTY : <input type="text" id = "<?php $prod['product_id'];?>" size = "2" maxlength="2" value ="<?php echo $item['qty'];?>"><a onclick="quantadd('<?php echo $prod['product_id'];?>')"><button type = "submit" id="sub">Manage QTY</button></a> | <a href="../Actions/remove_from_cart.php?pid=<?php echo $item['p_id'];?>" onclick="return confirm('Remove from Cart?')"><Button>Remove From Cart</Button></a></li>
         <br>
         <?php endforeach; ?>
     </ul>

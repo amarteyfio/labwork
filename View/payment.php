@@ -71,7 +71,7 @@ $user = selcus_ctr($_SESSION['id']);
             <p>Item: <?php echo $prod['product_title'];?> x<?php echo $item['qty'];?></p>
         <?php endforeach;?>
         <input type="text" name="email" id="email-addresss" value="<?php echo $user['customer_email'];?>" required>
-        <input type="num" name="amount" id="amonunt" readonly>
+        <input type="num" name="amount" id="amonunt" readonly value="<?php echo $total; ?>">
         
         <button type="submit" onclick="payWithPaystack()">Pay</button>
         </div>

@@ -70,7 +70,9 @@ $user = selcus_ctr($_SESSION['id']);
         ?>
             <p>Item: <?php echo $prod['product_title'];?> x<?php echo $item['qty'];?></p>
         <?php endforeach;?>
-        <p>Total: <?php echo $total; ?></p>
+        <input type="text" name="email" id="email-addresss" value="<?php echo $user['customer_email'];?>" required>
+        <input type="num" name="amount" id="amonunt" readonly>
+        
         <button type="submit" onclick="payWithPaystack()">Pay</button>
         </div>
 
@@ -82,8 +84,8 @@ paymentForm.addEventListener("submit", payWithPaystack, false); */
         let handler = PaystackPop.setup({
 
             key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
-            email: <?php echo $user['customer_email'];?>,
-            amount: <?php echo (intval($total) * 100);?>,
+            email: document.getElementById("email-address").value,
+            amount: document.getElementById("amount").value * 100,
             currency: 'GHS',
             ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
             // label: "Optional string that replaces customer email"
@@ -94,8 +96,8 @@ paymentForm.addEventListener("submit", payWithPaystack, false); */
             let message = 'Payment complete! Reference: ' + response.reference;
             alert(message);
             // add_payment_detail_ctrl
-            email = <?php echo $user['customer_email'];?>;
-            amount = <?php echo (intval($total));?>;
+            email = document.getElementById("email-address").value;
+            amount = document.getElementById("amount").value;
             var dataString = 'email='+ email + '&amount='+ amount;
             if (response.status=='success'){
             //alert("Please Fill All Fields");

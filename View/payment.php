@@ -120,7 +120,7 @@ paymentForm.addEventListener("submit", payWithPaystack, false); */
             cache: false,
             success: function(result){
             // alert(result);
-            window.location="payment_success.php";
+            window.location.replace("payment_success.php");
             // window.location = "pay"
             }
             });

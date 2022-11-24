@@ -43,15 +43,20 @@ $result = curl_exec($ch);
 $invoice = mt_rand(100000,999999);//invoice
 $date = date("Y-m-d");
 //add order
-ord_ctr($cid,$invoice,$date);
+$o = ord_ctr($cid,$invoice,$date);
 
 $ord = ord_sel_ctr();
+$o_id = $ord['order_id'];
 
-//add payment
-payment_ctr($amt,$ord['order_id'],$date);
-
-//remove from cart
+if($o){
 remcart_ctr($cid);
+payment_ctr($amt,$o_id,$date);
+}
+else{
+    echo "Something Went Wrong!";
+}
+
+
 
 
 

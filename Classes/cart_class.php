@@ -95,7 +95,7 @@ class cart_class extends db_connection{
 
     //add payment 
     function payment($amt,$order_id,$date){
-        $sql = "INSERT INTO payment (amt,customer_id,currency,payment_date) VALUES ('$amt','$order_id','$date')";
+        $sql = "INSERT INTO payment (amt,customer_id,currency,payment_date) VALUES ('$amt','$order_id','GHS','$date')";
     }
 
     //SELECT NEW ORDER

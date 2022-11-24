@@ -77,7 +77,7 @@ $user = selcus_ctr($_SESSION['id']);
         <?php endforeach;?>
         <form id="paymentForm">
         <input type="text" name="email" id="email-addresss" value="<?php echo $user['customer_email'];?>" required>
-        <input type="num" name="amount" id="amonunt" readonly value="<?php echo $total; ?>">
+        <input type="num" name="amount" id="amount" readonly value="<?php echo $total; ?>">
         
         <button type="submit" onclick="payWithPaystack()" id="submit">Pay</button>
         </form>
@@ -92,7 +92,7 @@ paymentForm.addEventListener("submit", payWithPaystack, false); */
         event.preventDefault();
         let handler = PaystackPop.setup({
 
-            key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
+            key: 'pk_test_110ba43e9a482172973111eb66e68e2306265c16', // Replace with your public key
             email: document.getElementById("email-address").value,
             amount: document.getElementById("amount").value * 100,
             currency: 'GHS',

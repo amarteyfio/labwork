@@ -70,9 +70,9 @@ function ord_ctr($cid,$inv,$date){
 }
 
 //add payment 
-function payment_ctr($amt,$order_id,$date){
+function payment_ctr($amt,$cid,$order_id,$date){
     $pay = new cart_class();
-    return $pay->payment($amt,$order_id,$date);
+    return $pay->payment($amt,$cid,$order_id,$date);
 }
 
 //SELECT NEW ORDER

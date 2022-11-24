@@ -94,8 +94,8 @@ class cart_class extends db_connection{
     }
 
     //add payment 
-    function payment($amt,$c_id,$date){
-        $sql = "INSERT INTO payment (amt,customer_id,currency,payment_date) VALUES ('$amt','$c_id','GHS','$date')";
+    function payment($amt,$c_id,$oid,$date){
+        $sql = "INSERT INTO payment (amt,customer_id,order_id,currency,payment_date) VALUES ('$amt','$c_id','$oid','GHS','$date')";
         return $this->db_query($sql);
     }
 

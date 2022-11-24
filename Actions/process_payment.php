@@ -50,7 +50,7 @@ $o_id = $ord['order_id'];
 
 if($o){
 remcart_ctr($cid);
-payment_ctr($amt,$o_id,$date);
+payment_ctr($amt,$cid,$o_id,$date);
 }
 else{
     echo "Something Went Wrong!";

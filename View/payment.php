@@ -76,8 +76,8 @@ $user = selcus_ctr($_SESSION['id']);
             <p>Item: <?php echo $prod['product_title'];?> x<?php echo $item['qty'];?></p>
         <?php endforeach;?>
         <form id="paymentForm">
-        <input type="text" name="email" id="email-addresss" value="<?php echo $user['customer_email'];?>" required>
-        <input type="num" name="amount" id="amount" readonly value="<?php echo $total; ?>">
+        <input type="text" name="email" id="email-address" value="<?php echo $user['customer_email'];?>" required>
+        <input type="tel" name="amount" id="amount" readonly value="<?php echo $total; ?>">
         
         <button type="submit" onclick="payWithPaystack()" id="submit">Pay</button>
         </form>
@@ -85,7 +85,7 @@ $user = selcus_ctr($_SESSION['id']);
         <script src="https://js.paystack.co/v1/inline.js"></script> 
 
 
-        <script>
+    <script>
     /* const paymentForm = document.getElementById('paymentForm');
 paymentForm.addEventListener("submit", payWithPaystack, false); */
     function payWithPaystack() {
